@@ -3,12 +3,26 @@
 
   </style>
   <template>
-
+    <h3>Hello, world!</h3>
+    <p>Lorem ipsum</p>
   </template>
   <script>
     ({
-      sayHello: function () {
-        console.log("hello");
+      createdCallback: function () {
+        console.log("createdCallback");
+        var root = this.createShadowRoot();
+        root.appendChild(this.template.content.cloneNode(true));
+        //this.textContent = 'Hello';
+      },
+      attachedCallback: function () {
+        console.log("attachedCallback");
+      },
+      detachedCallback: function () {
+        console.log("detachedCallback");
+      },
+
+      sayHello: function (name) {
+        console.log("hello " + name);
       }
     });
   </script>
