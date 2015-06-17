@@ -9,7 +9,12 @@
 </head>
 <body>
 
-<script type="text/javascript">
-
+<bosonic-hello-world></bosonic-hello-world>
+<script>
+  window.addEventListener('WebComponentsReady', function() {
+    var hello = document.querySelector('bosonic-hello-world');
+    hello.sayHello();
+  });
 </script>
+
 </body>
